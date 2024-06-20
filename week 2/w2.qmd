@@ -7,6 +7,7 @@ format:
         smaller: true
         center: true
         scrollable: true
+        code-line-numbers: false
 ---
 
 # JavaScript Collections
@@ -121,4 +122,103 @@ ECMAScript 6 and above:
 - Better syntax - still prototype based inheritance
 - constructor must explicitly call `super()`
 - Multiple inheritance of Mixins
+
+# Asynchrony
+
+## Function calls
+
+:::: {.columns}
+
+::: {.column width=50%}
+
+- Function is like a "branch"
+  - but must save present state so we can return
+- Call stack:
+  - Keep track of chain of functions called up to now
+  - Pop back up out of the stack
+
+:::
+
+::: {.column width=50%}
+
+- `main()` on stack - current - calls `f()`
+- `f()` goes on stack - calls `g()`
+- `g()` goes on stack - calls `h()`
+- `h()` goes on stack - executes
+- return from `h` -> pop into `g`
+- return from `g` -> pop into `f`
+- return from `f` -> pop into `main`
+
+:::
+
+::::
+
+## Call Stack
+
+[Explanatory video](https://vimeo.com/96425312)
+
+[Visualize the call stack](http://latentflip.com/loupe/)
+
+## Event Loop and Task Queue
+
+- Task Queue: store next task to be executed
+  - Tasks are pushed into the queue by events (clicks, input, network etc.)
+- Event loop:
+  - Wait for call stack to be empty
+  - Pop next task from queue and push onto stack, start executing
+- Run-to-completion
+  - Guarantee from JavaScript runtime
+  - Each task will run to completion before next task is picked up
+
+## Blocking the browser
+
+[https://exploringjs.com/impatient-js/ch_async-js.html#how-to-avoid-blocking-the-javascript-process](https://exploringjs.com/impatient-js/ch_async-js.html#how-to-avoid-blocking-the-javascript-process)
+
+## Why callbacks?
+
+- Long running code
+  - Will block execution till it finishes
+- Push long running code into a separate "thread" or "task"
+  - Let main code proceed
+  - Call back when task is done
+
+## Example: reading files - synchronous
+
+. . .
+
+```javascript
+const fs = require('fs');
+
+try {
+    const data = fs.readFileSync('file.txt', 'utf8');
+    console.log(data);
+} catch (err) {
+    console.error(err);
+}
+```
+
+## Example: reading files - asynchronous
+
+. . .
+
+```javascript
+const fs = require('fs');
+
+fs.readFile('file.txt', 'utf8', (err, data) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    console.log(data);
+});
+```
+
+## Asynchronous Code
+
+- Very powerful - allows JS to have high performance even though it is single-threaded
+- Can be difficult to comprehend
+  - Focus on using async libraries and functions before writing your own
+- Promises, async function calls, etc.
+  - Important and useful concepts
+  - Deferred for now
 
