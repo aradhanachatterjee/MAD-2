@@ -99,3 +99,30 @@
 // x = [1, 2, 3, 4, 5, 6];
 // v = x.reduce((a, i) => a + i, 10);
 // console.log(v); // 31
+
+/***
+ * AQ 2.6
+ */
+
+// 1
+
+// class A {
+//     constructor (name) {
+//         this.name = name;
+//     }
+// }
+
+// obj = new A('Abhi');
+// console.log(typeof(JSON.stringify(obj))); // string
+
+// 2
+
+// class A {
+//     constructor (name) {
+//         this.name = name;
+//     }
+// }
+
+// obj = new A('Abhi');
+// temp = JSON.stringify(obj);
+// console.log(typeof(JSON.parse(temp))); // object

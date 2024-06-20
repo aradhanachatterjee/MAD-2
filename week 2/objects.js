@@ -100,14 +100,14 @@
  * Classes
  */
 
-// class Animal {
-//     constructor(name) {
-//         this.name = name;
-//     }
-//     describe() {
-//         return `${this.name} makes a sound ${this.sound}`;
-//     }
-// }
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+    describe() {
+        return `${this.name} makes a sound ${this.sound}`;
+    }
+}
 
 // let x = new Animal('Jerry');
 // console.log(x.describe());  // Jerry makes a sound undefined
@@ -122,17 +122,28 @@
 // let y = new Dog('Momo');
 // console.log(y.describe());  // Momo makes a sound woof
 
-// class Cat extends Animal {
-//     constructor(name) {
-//         super(name);
-//         this.sound = 'meow';
-//     }
-//     static fromJson(o) {
-//         c = new Cat(o.name);
-//         c.sound = o.sound;
-//         return c;
-//     }
-// }
+class Cat extends Animal {
+    constructor(name) {
+        super(name);
+        this.sound = 'meow';
+    }
+    static fromJson(o) {
+        c = new Cat(o.name);
+        c.sound = o.sound;
+        return c;
+    }
+}
 
-// let c = new Cat('Miffy');
-// console.log(c.describe());  // Miffy makes a sound meow
+let c = new Cat('Miffy');
+console.log(c.describe());  // Miffy makes a sound meow
+
+/***
+ * JSON back and forth
+ */
+
+let p = JSON.stringify(c);
+console.log(c);
+console.log(p);
+
+let cc = Cat.fromJson(JSON.parse(p));
+console.log(cc.describe());  // Miffy makes a sound meow

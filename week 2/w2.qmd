@@ -222,3 +222,18 @@ fs.readFile('file.txt', 'utf8', (err, data) => {
   - Important and useful concepts
   - Deferred for now
 
+# JSON
+
+## JSON
+
+- Object Notation - for serialization, communication
+- Notation is frozen
+  - Means even problem cases will remain (trailing "." could ve useful but will not be used)
+- Usage through JSON API
+
+## JSON API
+
+- Global namespace object `JSON`
+- Main methods:
+  - `JSON.stringify()`
+  - `JSON.parse()`
