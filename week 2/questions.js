@@ -2,7 +2,9 @@
  * Questions
  */
 
-// aq 2.3
+/***
+ * aq 2.3
+ */
 
 // 1
 
@@ -41,3 +43,49 @@
 // }
 // console.log(y.length);
 // output: 2
+
+/***
+ * aq 2.4
+ */
+
+
+// 1
+
+// let a = { 'a': 1, 'b': 2, 'c': function() { return "Hello"; } };
+// let b = { __proto__: a, 'd': 3 };
+// console.log(b.length, b.c()); // undefined Hello
+
+// 2
+
+// class A {
+//     constructor(name) {
+//         this.name = name;
+//     }
+//     get output() {
+//         return this.name;
+//     }
+//     set input (name) {
+//         this.name = name;
+//     }
+// }
+
+// obj = new A();
+// obj.input = 'Abhi';
+// console.log(obj.output); // Abhi
+
+// 3
+
+// x = [1, 2, 3, 4, 5, 6];
+// y = [...x, 7, 8, 9];
+// console.log(y.length); // 9
+
+// 4
+
+// x = [1, 2, 2, 4, 5, -2, -7, -9];
+// console.log(x.sort()); // [-2, -7, -9, 1, 2, 2, 4, 5]
+// console.log(x.sort((a, b) => a - b)); // [-9, -7, -2, 1, 2, 2, 4, 5]
+
+//5
+
+// x = [1, 2, 2, 4, 5, -2, -7, -9];
+// console.log(x.sort((a, b) => b - a)); // [5, 4, 2, 2, 1, -2, -7, -9]
