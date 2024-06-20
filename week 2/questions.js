@@ -126,3 +126,150 @@
 // obj = new A('Abhi');
 // temp = JSON.stringify(obj);
 // console.log(typeof(JSON.parse(temp))); // object
+
+/***
+ * Practice Assignment
+ */
+
+// 1
+
+// for (const i = 1; i <= 5; i++) {
+//     console.log(i)
+// }
+
+// for (const i in [1, 2, 3, 4, 5]) {
+//     console.log(i)
+// }
+
+// 2
+
+// let a = [2, 3, 4];
+// let b = [2, 2, ...a, 5];
+// let c = b.find(x => x % 2);
+// console.log(c); // 3
+
+// 3
+
+// let a = {
+//     'first_name': 'abhi',
+//     'age': 22,
+//     'place': 'delhi'
+// };
+
+// let { first_name : alt } = a;
+// console.log(first_name); // ReferenceError: first_name is not defined
+
+// 4
+
+// arr = ['iitmonline', true, 3, (a, b) => a + b]
+// let result = Array()
+// for (let i = 0; i < arr.length; i++) {
+//     result.push(typeof arr[i])
+//     }
+// console.log(result) // [ 'string', 'boolean', 'number', 'function' ]
+
+// 5
+
+// arr = ['iitmonline', true, 3, (a, b) => a + b]
+// let result = Array()
+// for (const i in arr) {
+//     result.push(arr[i] * arr[i])
+//     }
+// console.log(result) // [ NaN, 1, 9, NaN ]
+
+// 6
+
+// fruit = {
+//     name: 'Apple',
+//     color: 'red',
+// }
+
+// let description = ({ name, color, shape = 'Spherical' }) => {
+//     console.log(`${name} is ${color} and ${shape}`)
+// }
+
+// description(fruit) // apple is red and Spherical
+
+// 7
+
+// class Player {
+//     constructor (name) {
+//         this.name = name
+//         this.team = 'Indian Cricket Team'
+//         this.nationality = 'Indian'
+//     }
+// }
+
+// class Bowler extends Player {
+//     constructor (name, wicket, average) {
+//         super(name)
+//         this.role = 'Bowler'
+//         this.wicket = wicket
+//         this.average = average
+//     }
+// }
+
+// bumbum = new Bowler('Jasprit Bumrah', 101, 22.79)
+// console.log(bumbum) // Bowler {name: 'Jasprit Bumrah', team: 'Indian Cricket Team', nationality: 'Indian', role: 'Bowler', wicket: 101, …}
+
+// 8
+
+// class Player {
+//     constructor (name, team) {
+//         this.name = name
+//         this.team = team
+//     }
+
+//     get describe() {
+//         return `${this.name} from ${this.team} is a ${this.role}`
+//     }
+// }
+
+// class Batsman extends Player {
+//     constructor (name, team) {
+//         super(name, team)
+//         this.role = 'Batsman'
+//     }
+// }
+
+// p = new Batsman('Rohit', 'Indian Cricket Team')
+// console.log(p.describe) // Rohit from Indian Cricket Team is a Batsman
+
+// 9
+
+// const obj = {
+//     a: 10,
+//     operation(x, y, n) {
+//         return x ** n + y + this.a
+//     },
+// }
+
+// const arr = Array()
+// p = obj.operation
+// arr.push(p.bind(obj, 2)(3, 2))
+// arr.push(p.apply(obj, [2, 2, 3, 4, 5]))
+// arr.push(p.call(obj, 2, 3, 4))
+// console.log(arr); // [17, 20, 29]
+
+
+// 10
+
+// const obj = {
+//     firstName: 'Narendra',
+//     lastName: 'Mishra',
+
+//     get fName() {
+//         return this.firstName
+//     },
+
+//     get lName() {
+//         return this.lastName
+//     },
+
+//     set lName(name) {
+//         this.lastName = name
+//     },
+// }
+
+// obj.lName = 'Mourya'
+// obj.lName = console.log(obj.lName) // Mourya
