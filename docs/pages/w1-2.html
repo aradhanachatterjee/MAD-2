@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MAD-II - Modern Application Development - II — Week 1</title>
+<title>MAD-II - Modern Application Development - II — Week 1 Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,6 +103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="custom.css">
 </head>
 
 <body class="nav-fixed">
@@ -127,7 +128,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../pages/w1.html" aria-current="page"> 
+    <a class="nav-link" href="../pages/w1.html"> 
 <span class="menu-text">Week 1</span></a>
   </li>  
   <li class="nav-item">
@@ -202,7 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Modern Application Development - II — Week 1</h1>
+<h1 class="title">Modern Application Development - II — Week 1 Notes</h1>
 </div>
 
 
@@ -219,19 +220,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Click here to view in presentation mode: <a href="w1-slides.html">Modern Application Development II - Week 1</a></p>
-</div>
-</div>
 <section id="lecture-1.1---review-of-modern-application-development---i-and-what-next" class="level1">
 <h1>Lecture 1.1 - Review of Modern Application Development - I and what next?</h1>
 <section id="review-of-mad-i" class="level2">
@@ -440,6 +428,7 @@ Note
 </ul></li>
 <li><a href="https://learnjavascript.online/app.html">Learn JavaScript Online</a> - interactive tutorial</li>
 </ul>
+<p>. . .</p>
 <p><strong>Utilities</strong></p>
 <ul>
 <li><a href="https://babeljs.io/">BabelJS</a> - Compiler converts new JS to older compatible forms</li>
@@ -464,10 +453,13 @@ Note
 </section>
 <section id="identifiers---the-words-of-the-language" class="level2">
 <h2 class="anchored" data-anchor-id="identifiers---the-words-of-the-language">Identifiers - the words of the language</h2>
+<p>. . .</p>
 <p>Reserved words:</p>
 <pre><code>`await` `break` `case` `catch` `class` `const` `continue` `debugger` `default` `delete` `do` `else` `export` `extends` `finally` `for` `function` `if` `import` `in` `instanceof` `let` `new` `return` `static` `super` `switch` `this` `throw` `try` `typeof` `var` `void` `while` `with` `yield`</code></pre>
+<p>. . .</p>
 <p>Literals (values):</p>
 <pre><code>`true` `false` `null`</code></pre>
+<p>. . .</p>
 <p>Others to avoid</p>
 <pre><code>`enum` `implements` `package` `protected` `interface` `private` `public` `Infinity` `NaN` `undefined` `async`</code></pre>
 </section>
@@ -547,6 +539,7 @@ Note
 <li>Explicitly set to a non-value</li>
 </ul></li>
 </ul>
+<p>. . .</p>
 <p>Very similar and may be used interchangeably in most places - keep context in mind when using for clarity of code</p>
 </section>
 <section id="operators-and-comparisons" class="level2">
@@ -661,6 +654,7 @@ Note
 <div class="sourceCode" id="cb9"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> x <span class="op">=</span> <span class="kw">function</span>() { <span class="cf">return</span> <span class="st">"hello"</span>} <span class="co">// Anonymous bound</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">function</span>() { <span class="cf">return</span> <span class="st">"hello"</span>})() <span class="co">// Declare and invoke</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>. . .</p>
 <p>Why? Older JS versions did not have good scoping rules. - Avoid IIFEs in modern code - poor readability</p>
 </section>
 </section>

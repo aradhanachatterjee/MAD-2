@@ -1,20 +1,16 @@
 ---
 title: "Modern Application Development - II — Week 1"
 format:
-      html:
-        highlight: true
-        fig_caption: true
-        toc: true
-        toc_float: true
-        code_folding: show
-        number_sections: true
-        theme: cerulean
-        toc_depth: 2
----
+    revealjs:
+        incremental: true
+        slideNumber: true
+        smaller: true
+        center: true
+        scrollable: true
+        code-line-numbers: false
+        footer: '<a href="w1.html">Complete notes</a>'
 
-::: {.callout-note}
-Click here to view in presentation mode: [Modern Application Development II - Week 1](w1-slides.html)
-:::
+---
 
 # Lecture 1.1 - Review of Modern Application Development - I and what next?
 
@@ -150,6 +146,8 @@ Click here to view in presentation mode: [Modern Application Development II - We
 - [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
   - several examples and compatibility hints
 - [Learn JavaScript Online](https://learnjavascript.online/app.html) - interactive tutorial
+  
+. . .
 
 **Utilities**
 
@@ -169,13 +167,19 @@ Click here to view in presentation mode: [Modern Application Development II - We
 
 ## Identifiers - the words of the language
 
+. . .
+
 Reserved words:
 
     `await` `break` `case` `catch` `class` `const` `continue` `debugger` `default` `delete` `do` `else` `export` `extends` `finally` `for` `function` `if` `import` `in` `instanceof` `let` `new` `return` `static` `super` `switch` `this` `throw` `try` `typeof` `var` `void` `while` `with` `yield`
 
+. . .
+
 Literals (values):
 
     `true` `false` `null`
+
+. . .
 
 Others to avoid
 
@@ -242,6 +246,8 @@ Others to avoid
   - Default unknown state
 - null
   - Explicitly set to a non-value
+
+. . .
 
 Very similar and may be used interchangeably in most places - keep context in mind when using for clarity of code
 
@@ -347,6 +353,8 @@ Arrow function
 
     (function() { return "hello"})() // Declare and invoke
 ```
+
+. . .
 
 Why? Older JS versions did not have good scoping rules.
 - Avoid IIFEs in modern code - poor readability

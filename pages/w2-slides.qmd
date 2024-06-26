@@ -1,20 +1,16 @@
 ---
 title: "Modern Application Development II - Week 2"
-format:
-      html:
-        highlight: true
-        fig_caption: true
-        toc: true
-        toc_float: true
-        code_folding: show
-        number_sections: true
-        theme: cerulean
-        toc_depth: 2
----
 
-::: {.callout-note}
-Click here to view in presentation mode: [Modern Application Development II - Week 2](w2-slides.html)
-:::
+format:
+    revealjs:
+        incremental: true
+        slideNumber: true
+        smaller: true
+        center: true
+        scrollable: true
+        code-line-numbers: false
+        footer: '<a href="w2.html">Complete notes</a>'
+---
 
 # JavaScript Collections
 
@@ -47,6 +43,8 @@ Click here to view in presentation mode: [Modern Application Development II - We
 - `map`, `filter`, `find`
   - Apply a callback function over each element in the collection
 - Elements of functional programming: create a transformation chain
+
+. . .
 
 **Callback**: important concept - a function that is passed as an argument to another function, to be called back for some purpose
 
@@ -83,6 +81,8 @@ Click here to view in presentation mode: [Modern Application Development II - We
   - synchronous load: server blocks till module is loaded
 - AMD - asynchronous module definition
   - used for browser-side modules
+
+. . .
 
 ECMAScript 6 and above:
 
@@ -150,7 +150,9 @@ ECMAScript 6 and above:
 - return from `h` -> pop into `g`
 - return from `g` -> pop into `f`
 - return from `f` -> pop into `main`
+
 :::
+
 ::::
 
 ## Call Stack
@@ -184,6 +186,7 @@ ECMAScript 6 and above:
 
 ## Example: reading files - synchronous
 
+. . .
 
 ```javascript
 const fs = require('fs');
@@ -198,6 +201,7 @@ try {
 
 ## Example: reading files - asynchronous
 
+. . .
 
 ```javascript
 const fs = require('fs');
