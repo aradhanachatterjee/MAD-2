@@ -72,72 +72,81 @@
             expression += o;
             document.getElementById("expression").value = expression;
         }
+
+        function switch_sign(x) {
+            expression = document.getElementById("expression").value;
+            document.getElementById("expression").value = expression*-1;
+        }
+
+        function delete_last() {
+            expression = document.getElementById("expression").value;
+            document.getElementById("expression").value = expression.slice(0, -1);
+        }
+
+        function clear_all() {
+            document.getElementById("expression").value = "";
+        }
     </script>
+    <style>
+        .calculator {
+        max-width: 400px;
+        margin: 50px auto;
+        }
+        .calculator .btn {
+        font-size: 1.5rem;
+        height: 80px;
+        }
+    </style>
 </head>
 
 <body onload="initialize_app()">
     <div class="container">
+        <div class="calculator">
 
-        <div class="row">
-            <div class="col"></div>
-
-            <div class="col">
-                <input type="input" class="form-control" id="expression" placeholder="3*5" />
+            <div class="input-group input-group-lg">
+                <input type="text" class="form-control" id="expression" placeholder="3*5"/>
+            </div>
+            <div class="row g-1 mt-1">
+                <div class="col-6">
+                    <button class="btn btn-danger w-100" onclick="clear_all()">CLEAR</button>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-secondary w-100" onclick="delete_last()">DEL</button>
+                </div>
             </div>
 
-            <div class="col"></div>
-        </div>
-        <div class="row">
-            <div class="col"></div>
-
-            <div class="col">
-                <button class="btn btn-primary" onclick="input_number('7')">7</button>
-                <button class="btn btn-primary" onclick="input_number('8')">8</button>
-                <button class="btn btn-primary" onclick="input_number('9')">9</button>
-                <button class="btn btn-warning" onclick="input_operator('/')">/</button>
-            </div>
-
-            <div class="col"></div>
-        </div>
-        <div class="row">
-            <div class="col"></div>
-
-            <div class="col">
-                <button class="btn btn-primary" onclick="input_number('4')">4</button>
-                <button class="btn btn-primary" onclick="input_number('5')">5</button>
-                <button class="btn btn-primary" onclick="input_number('6')">6</button>
-                <button class="btn btn-warning"onclick="input_operator('*')">*</button>
-            </div>
-
-            <div class="col"></div>
-        </div>
-        <div class="row">
-            <div class="col"></div>
-
-            <div class="col">
-                <button class="btn btn-primary" onclick="input_number('1')">1</button>
-                <button class="btn btn-primary" onclick="input_number('2')">2</button>
-                <button class="btn btn-primary" onclick="input_number('3')">3</button>
-                <button class="btn btn-warning"onclick="input_operator('-')">-</button>
-            </div>
-
-            <div class="col"></div>
+            <div class="row g-1 mt-1">
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="input_number('7')">7</button></div>
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="input_number('8')">8</button></div>
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="input_number('9')">9</button></div>
+                <div class="col-3"><button class="btn btn-warning w-100" onclick="input_operator('/')">/</button></div>
+              </div>
+              <div class="row g-1 mt-1">
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="input_number('4')">4</button></div>
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="input_number('5')">5</button></div>
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="input_number('6')">6</button></div>
+                <div class="col-3"><button class="btn btn-warning w-100" onclick="input_operator('*')">*</button></div>
+              </div>
+              <div class="row g-1 mt-1">
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="input_number('1')">1</button></div>
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="input_number('2')">2</button></div>
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="input_number('3')">3</button></div>
+                <div class="col-3"><button class="btn btn-warning w-100" onclick="input_operator('-')">-</button></div>
+              </div>
+              <div class="row g-1 mt-1">
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="input_number('0')">0</button></div>
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="input_operator('.')">.</button></div>
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="switch_sign('x')">+/-</button></div>
+                <div class="col-3"><button class="btn btn-warning w-100" onclick="input_operator('+')">+</button></div>
+              </div>
+              <div class="row g-1 mt-1">
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="input_operator('(')">(</button></div>
+                <div class="col-3"><button class="btn btn-secondary w-100" onclick="input_operator(')')">)</button></div>
+                <div class="col-6"><button class="btn btn-success w-100" id="calculate">=</button></div>
+              </div>
         </div>
 
-        <div class="row">
-            <div class="col"></div>
-
-            <div class="col">
-                <button class="btn btn-primary" onclick="input_number('0')">0</button>
-                <button class="btn btn-primary">.</button>
-                <button class="btn btn-success" id="calculate">=</button>
-                <button class="btn btn-warning"onclick="input_operator('+')">+</button>
-            </div>
-
-            <div class="col"></div>
-        </div>
-
-
+    </div>
         <div class="row">
             <div class="col"></div>
 
