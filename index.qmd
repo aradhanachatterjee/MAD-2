@@ -1,0 +1,5 @@
+---
+title: "MAD-II"
+---
+
+This is a site to store MAD-II course materials.
