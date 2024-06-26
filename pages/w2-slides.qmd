@@ -12,7 +12,7 @@ format:
         footer: '<a href="w2.html">Complete notes</a>'
 ---
 
-# JavaScript Collections
+# Lecture 2.1 - Introduction to JavaScript Collections
 
 ## Basic Arrays
 
@@ -66,7 +66,7 @@ format:
 - Computed iterables
 - Dynamically generate iterators
 
-# Modularity
+# Lecture 2.3 - JavaScript - Modularity
 
 ## Modules
 
@@ -125,7 +125,7 @@ ECMAScript 6 and above:
 - constructor must explicitly call `super()`
 - Multiple inheritance of Mixins
 
-# Asynchrony
+# Lecture 2.5 - JavaScript - Asynchrony
 
 ## Function calls
 
@@ -224,7 +224,7 @@ fs.readFile('file.txt', 'utf8', (err, data) => {
   - Important and useful concepts
   - Deferred for now
 
-# JSON
+# Lecture 2.6 - JavaScript - JSON API
 
 ## JSON
 

@@ -1013,5 +1013,19 @@
     "title": "Modern Application Development II - Week 3",
     "section": "",
     "text": "User-facing part of the application\n\nUser Interface (UI) and User Experience (UX)\n\nRequirements\n\nAvoid complex logic - application logic should be in the backend\nNo data storage\nWork with stateless nature of HTTP\n\nDesirable\n\nAesthetically pleasing\nResponsive - no lag/latency\nAdaptive - different screens\n\n\n\n\n\n\nImperative: sequence of actions to achieve final result\n\nDraw boxes for navigation, main text, fill in text, wait for clicks etc.\nFunctions for each step, composition of functions\n\nDeclarative: specify desired result\n\nCompiler/Interpreter knows how to achieve result\nFunction integration automated\n\n\n\n\n\n\nCredit: Flutter documentation “Start thinking declaratively”\n\n\n\n\n\n\nInternal details of system: memory\nReproducibility\n\nGiven a “system state”, the system should always respond the same way to input\n\nComplexity\n\nAny non-trivial application needs internal state\n\n\n\n\n\n\nComplete database of amazon.in, flipkart.com\n\nStocks of available items, prices, logged in/register users, etc.\n\nAll news articles ever published on toi.com, thehindu.com, bbc.com\nAll students, courses, marks, certificates, etc. for NPTEL\n\n. . .\nTypically huge, but comprehensive\n\nCompletely independent of the user interface/frontend!\n\n\n\n\n. . .\nApplication:\n\nSystem as seen by an individual user/session\nIncludes interactivity, session management\n\n. . .\nExamples:\n\nShopping cart, user preferences, theme\nFollowed news items, recommendations\nDashboard displays\n\n\n\n\n. . .\nUI:\n\nPart of application actually seen/intereacted with\nEphemeral - “lasting for a very short time” (term used by Flutter)\n\n. . .\nExamples:\n\nLoading icons\nCurrently selected tab in multi-tab document/page\n\n\n\n\n\nHTTP is stateless\nHow to convey state between client and server?\n\nClient maintains state - sends requests to server for specific items\nServer maintains state - only specific requests allowed to client\n\n\n\n\n\n\nWhat to display on screen?\nWho determines the display?\nHow should user input be collected and processed?"
+  },
+  {
+    "objectID": "pages/w2-slides.html#json",
+    "href": "pages/w2-slides.html#json",
+    "title": "Modern Application Development II - Week 2",
+    "section": "JSON",
+    "text": "JSON\n\nObject Notation - for serialization, communication\nNotation is frozen\n\nMeans even problem cases will remain (trailing “.” could ve useful but will not be used)\n\nUsage through JSON API"
+  },
+  {
+    "objectID": "pages/w2.html#json",
+    "href": "pages/w2.html#json",
+    "title": "Modern Application Development II - Week 2",
+    "section": "JSON",
+    "text": "JSON\n\nObject Notation - for serialization, communication\nNotation is frozen\n\nMeans even problem cases will remain (trailing “.” could ve useful but will not be used)\n\nUsage through JSON API"
   }
 ]
