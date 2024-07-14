@@ -1,23 +1,52 @@
 /***
+ * 2.1 - Introduction to JavaScript Collections
+ */
+
+/***
  * Basic array declaration - mixed mode 
  */
 // let x = [1, 2, 3];
-// console.log(`${typeof(x)}: ${x} with length = ${x.length}`); // object: 1,2,3 with length = 3
-// console.log(x[0]); //  1
+// console.log(`${typeof(x)}: ${x} with length = ${x.length}`);
+// console.log(x[0]);
+
+/******
+ * Output(s):
+ * object: 1,2,3 with length = 3
+ * 1
+ */ 
 
 // // Mixed element types
 // let y = [1, 'b', a => a + 1];
-// console.log(`${typeof(y)}: ${y} with length = ${y.length}`); // object: 1,b,a => a + 1 with length = 3
-// console.log(x.length, y.length); // 3 3
+// console.log(`${typeof(y)}: ${y} with length = ${y.length}`);
+// console.log(x.length, y.length);
+
+/***
+ * Output(s):
+ * object: 1,b,a => a + 1 with length = 3
+ * 3 3
+ */
 
 // // Deleting
 // x = [];
-// console.log(`${typeof(x)}: ${x} with length = ${x.length}`); // object:  with length = 0
+// console.log(`${typeof(x)}: ${x} with length = ${x.length}`);
+
+/***
+ * Output(s):
+ * object:  with length = 0
+ */
 
 // // Holes
 // y.length = 10;
-// console.log(`${typeof(y)}: ${y} with length = ${y.length}`); // object: 1,b,a => a + 1,,,,,,, with length = 10
+// console.log(`${typeof(y)}: ${y} with length = ${y.length}`);
 
+/***
+ * Output(s):
+ * object: 1,b,a => a + 1,,,,,,, with length = 10
+ */
+
+/***
+ * 2.2 - JavaScript Collections - Iterations and Destructuring
+ */
 
 /*** 
  * Iteration
@@ -27,29 +56,41 @@
 // for (let i=0; i<x.length; i++) {
 //     console.log(`x: ${x[i]} of type ${typeof(x[i])}`);   
 // }
-// x: 1 of type number
-// x: b of type string
-// x: a => a + 1 of type function
-// x: undefined of type undefined
-// x: undefined of type undefined
+
+/***
+ * Output(s):
+ * x: 1 of type number
+ * x: b of type string
+ * x: a => a + 1 of type function
+ * x: undefined of type undefined
+ * x: undefined of type undefined
+ */
 
 // 'in' iteration - skips undefined entries
 // for (const i in x) {
 //     console.log(`x: ${x[i]} of type ${typeof(x[i])}`);   
 // }
-// x: 1 of type number
-// x: b of type string
-// x: a => a + 1 of type function
+
+/***
+ * Output(s):
+ * x: 1 of type number
+ * x: b of type string
+ * x: a => a + 1 of type function
+ */
 
 // 'of' iteration - takes values
 // for (const i of x) {
 //     console.log(`x: ${i} of type ${typeof(i)}`);   
 // }
-// x: 1 of type number
-// x: b of type string
-// x: a => a + 1 of type function
-// x: undefined of type undefined
-// x: undefined of type undefined
+
+/***
+ * Output(s):
+ * x: 1 of type number
+ * x: b of type string
+ * x: a => a + 1 of type function
+ * x: undefined of type undefined
+ * x: undefined of type undefined
+ */
 
 /***
  * Are objects iterable?
@@ -57,19 +98,32 @@
 // let x = {'a': 1, 'b': 'alpha', 'c': [3, 2, 1]};
 // for (const i in x) {
 //     console.log(i);
-//     // console.log(x[i]);
 // }
+
+/***
+ * Output(s):
+ * a
+ * b
+ * c
+ */
 
 // tries to iterate directly over values of x - not iterable for const i of x
 // for (const i of x) {
 //     console.log(i); // TypeError: x is not iterable
 //     // console.log(x[i]);
 // }
+// let x = {'a': 1, 'b': 'alpha', 'c': [3, 2, 1]};
 
 // for (const [k, v] of Object.entries(x)) {
-//     // console.log(v);
 //     console.log(k, v);
 // }
+
+/***
+ * Output(s):
+ * a 1
+ * b alpha
+ * c [3,2,1]
+ */
 
 /***
  * Creating arrays with holes
@@ -82,10 +136,25 @@
 //     console.log(`Index ${k}, value ${v} of type ${typeof(v)}`);
 // }
 
+/***
+ * Output(s):
+ * Index 0, value undefined of type undefined
+ * Index 1, value 10 of type number
+ * Index 2, value undefined of type undefined
+ * Index 3, value hello of type string
+ * Index 4, value undefined of type undefined
+ */
+
 // in operator only iterates over defined values
 // for (const i in x) {
 //     console.log(`Index ${i}, value ${x[i]} of type ${typeof(x[i])}`);
 // }
+
+/***
+ * Output(s):
+ * Index 1, value 10 of type number
+ * Index 3, value hello of type string
+ */
 
 /***
  * Spreading
@@ -99,31 +168,35 @@
 // console.log(z);
 
 /***
+ * Output(s):
+ * [1, 2, 3]
+ * [0, 1, 2, 3, 4]
+ * [0, [1, 2, 3], 4]
+ */
+
+/***
  *  Iteration and Transformation
  */
 
-let x = [1, -2, 3, -4, 5, 6, -7, 8];
-let y = x.find (t => t < 0);
-console.log(x);
-console.log(y);
+// let x = [1, -2, 3, -4, 5, 6, -7, 8];
+// let y = x.find (t => t < 0);
+// console.log(x);
+// console.log(y);
 
-// find returns the first element that satisfies the condition - here, the first negative number in x. so y = -2
+// find returns the first element that satisfies the condition - here, the first negative number in x.
+// output for y is -2
 
 // console.log(x.filter(x => x < 0));
-// x inside the filter function is a different x from the one outside - different scope
-// better to use different variable names to avoid confusion
+// filter returns all elements that satisfy the condition - here, all negative numbers in x.
+// output is [-2, -4, -7]
 
-console.log(x.filter(t => t < 0));
-
-// filter returns all elements that satisfy the condition - here, all negative numbers in x. so y = [-2, -4, -7]
-
-console.log(x.map(i => i > 0 ? '+' : '-'));
+// console.log(x.map(i => i > 0 ? '+' : '-'));
 
 // map applies the function to all elements of the array - here, if the element is positive, it returns '+', otherwise it returns '-'
-// so output is ['+', '-', '+', '-', '+', '+', '-', '+']
+// output is ['+', '-', '+', '-', '+', '+', '-', '+']
 
 // console.log(x.reduce((a, i) => a+i, 0));
-// reduce applies the function takes two parameters - a and i and returns a + i. a's value is initialized to 0 within reduce function itself
+// reduce applies the function that takes two parameters - a and i and returns a + i. a's value is initialized to 0 within reduce function itself
 // i is from the array on which reduce is called - here, x
 /***
     * 1st iteration: a = 0, i = 1 => a + i = 1 -- a is now 1
@@ -135,6 +208,8 @@ console.log(x.map(i => i > 0 ? '+' : '-'));
     * 7th iteration: a = 9, i = -7 => a + i = 2 -- a is now 2
     * 8th iteration: a = 2, i = 8 => a + i = 10 -- a is now 10
  */
+// console.log(x.reduce((a, i) => a+i, 10));
+// output is 20
 
 // console.log(x.reduce((a, i) => a*i, 1));
 // reduce can also be used to multiply all elements of the array together
@@ -158,15 +233,18 @@ console.log(x.map(i => i > 0 ? '+' : '-'));
 
 // console.log(x.sort((a, b) => a - b));
 
+// Output: [-7, -4, -2, 1, 3, 5, 6, 8]
+
+
 /***
  * Destructuring
  */
 
 // let x = [1, 2, 3];
-// // let [a, b] = x;
-// // // console.log(x, a, b);
-// // console.log(a);
-// // console.log(b);
+// let [a, b] = x;
+// console.log(x, a, b);
+// console.log(a);
+// console.log(b);
 
 // for (const [k, v] of x.entries()) {
 //     console.log(`Index ${k}, value ${v} of type ${typeof(v)}`);
@@ -174,24 +252,24 @@ console.log(x.map(i => i > 0 ? '+' : '-'));
 
 // Object destructuring
 // const person = {
-//     firstName: 'Alpert',
+//     firstName: 'Albert',
 //     lastName: 'Pinto',
 //     age: 25,
 //     city: 'Mumbai'
 // };
 
-// console.log(person);
+// console.log(person); // { firstName: 'Albert', lastName: 'Pinto', age: 25, city: 'Mumbai' }
 
 // const {firstName: fn, city: c} = person;
-// console.log(fn);
-// console.log(c);
+// console.log(fn); // Albert
+// console.log(c); // Mumbai
 
 // // console.log(person);
 
 // const {lastName, age} = person;
-// console.log(lastName);
-// console.log(age);
+// console.log(lastName); // Pinto
+// console.log(age); // 25
 
 // const {firstName, ...rem} = person; // rem for remainder
-// console.log(firstName);
-// console.log(rem);
+// console.log(firstName); // Albert
+// console.log(rem); // { lastName: 'Pinto', age: 25, city: 'Mumbai' }

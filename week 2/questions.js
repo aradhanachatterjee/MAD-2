@@ -3,6 +3,48 @@
  */
 
 /***
+ * aq 2.2
+ */
+
+// 1
+
+// let a = [1, 2, 3, 4, 5];
+// console.log(Object.keys(a));
+// output: ['0', '1', '2', '3', '4']
+
+// 2
+
+// let a = [1, 2, 3, 4, 5];
+// console.log(Object.values(a));
+// output: [1, 2, 3, 4, 5]
+
+// 3
+
+// let a = [1, 2, 3];
+// console.log(Object.entries(a));
+// output: [['0', 1], ['1', 2], ['2', 3]]
+
+// 4
+// let a = [1, 2, 3, 4, 5];
+// a.length = 9;
+// console.log(a.length);
+// output: 9
+
+// 5
+// let a = [1, 2, 3, 4, 5];
+// a.length = 9;
+// console.log(a);
+// output: [1, 2, 3, 4, 5, <4 empty items>]
+// therefore, number of holes is 4
+
+// 6
+// let a = [2, 3, 4];
+// let b = [1, 2, ...a, 5];
+// console.log(b);
+// output: [1, 2, 2, 3, 4, 5]
+
+
+/***
  * aq 2.3
  */
 
@@ -273,3 +315,26 @@
 
 // obj.lName = 'Mourya'
 // obj.lName = console.log(obj.lName) // Mourya
+
+// Graded Assignment
+
+// 1
+
+// let a = [75, 55, 22, 5];
+// console.log(a.sort()); // [22, 5, 55, 75]
+// .sort sorts the array in lexicographical order - 2 comes before 5 and 5 comes before 7
+
+// 2
+// a = {
+//     name: 'Abhi',
+//     age: 22
+// };
+
+// b = [];
+// for (let i = 0; i < 3; i++) {
+//     b.push(a);
+// }
+// console.log(b);
+
+// // b[1].name = 'Akshay';
+// console.log(b[0].name); // Akshay

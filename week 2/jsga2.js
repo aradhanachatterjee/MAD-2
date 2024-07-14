@@ -56,52 +56,52 @@
 
 
 class Product {
- 
-    constructor(name, price, stock) {
-      this.name = name;
-      this.price = price;
-      this.stock = stock;
-    }
+
+  constructor(name, price, stock) {
+    this.name = name;
+    this.price = price;
+    this.stock = stock;
+  }
+
+}
   
+class CustomerProducts {
+  
+  constructor(customer_id, product, count) {
+    this.customer_id = customer_id;
+    this.product = product;
+    this.count = count;
+  }
+
+}
+  
+class Cafe {
+
+  constructor(products, balance) {
+    this.products = products;
+    this.balance = balance;
+    //Maintain the customer history
+    this.customer_products = [];
   }
   
-  class CustomerProducts {
   
-    constructor(customer_id, product, count) {
-      this.customer_id = customer_id;
-      this.product = product;
-      this.count = count;
-    }
-  
+  buyProduct(customer_id, product, count){
+
+    // Add your code here
+
   }
-  
-  class Cafe {
-  
-    constructor(products, balance) {
-      this.products = products;
-      this.balance = balance;
-      //Maintain the customer history
-      this.customer_products = [];
-    }
-  
-  
-    buyProduct(customer_id, product, count){
-  
-      // Add your code here
-  
-    }
-  
-  
-    returnProduct(customer_id, product, count){
-     
-      // Add your code here
-  
-    }
-  
-  
-    getCurrentBalance(){
-  
-      // get the current balance at cafe
-  
-    }
+
+
+  returnProduct(customer_id, product, count){
+    
+    // Add your code here
+
   }
+
+
+  getCurrentBalance(){
+
+    // get the current balance at cafe
+
+  }
+}
