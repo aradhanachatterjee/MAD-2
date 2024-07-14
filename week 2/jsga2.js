@@ -83,25 +83,64 @@ class Cafe {
     //Maintain the customer history
     this.customer_products = [];
   }
+
+  findProduct(productName){
+    return this.products.find(product => product.name === productName);
+  }
+
+  findCustomerProduct(customer_id, productName){
+    return this.customer_products.find(
+      cp => cp.customer_id === customer_id && cp.product.name === productName
+    );
+  }
   
   
   buyProduct(customer_id, product, count){
+    const cafeProduct = this.findProduct(product.name);
 
-    // Add your code here
+    if (!cafeProduct || cafeProduct.stock < count) {
+      return false;
+    }
 
+    cafeProduct.stock -= count;
+    this.balance += product.price * count;
+
+    const customerProduct = this.findCustomerProduct(customer_id, product.name);
+
+    if (customerProduct) {
+      customerProduct.count += count;
+    } else {
+      this.customer_products.push(new CustomerProducts(customer_id, product, count));
+    }
+
+    return true;
   }
 
 
   returnProduct(customer_id, product, count){
-    
-    // Add your code here
+    const cafeProduct = this.findProduct(product.name);
+    const customerProduct = this.findCustomerProduct(customer_id, product.name);
 
+    if (!cafeProduct || !customerProduct || customerProduct.count < count) {
+      return false;
+    }
+
+    cafeProduct.stock += count;
+    this.balance -= product.price * count;
+
+    if (customerProduct.count === count) {
+      this.customer_products = this.customer_products.filter(
+        cp => !(cp.customer_id === customer_id && cp.product.name === product.name)
+      );
+    } else {
+      customerProduct.count -= count;
+    }
+
+    return true;
   }
 
 
   getCurrentBalance(){
-
-    // get the current balance at cafe
-
+    return this.balance;
   }
 }
